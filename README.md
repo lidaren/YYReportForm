@@ -13,31 +13,6 @@ iOS 表格控件，支持多级表头，支持锁定双向表头
  */
 /*
  
- ****** 各种表头共同需要重写方法 *********
- 
- * 参数选择器
- - (ExcelViewRightNavigationButtonOption)options {
- ExcelViewRightNavigationButtonOption options = 0;
- options = options |ExcelViewRightNavigationButtonOptionAreaAndDayTime;
- return options;
- }
- * 请求接口地址
- - (NSString*)httpUrl {
- return [NSString stringWithFormat:@"%@/dailynotice/getKH98BXLTCData",ServerIP];
- }
- * 请求接口参数
- - (NSDictionary*)param {
- return @{@"userId":self.userId,
- @"date":self.dateStr,
- @"lvl":@(self.localObject.lvl),
- @"ftId":@(self.localObject.localId)
- };
- }
- * 从左到右填充数据字段
- - (NSArray *)formDataObjectKeys{
- return @[@"bs01Name",@"dl1m23gQz",@"dl1m23gQzRate",@"ml1m23gQz",@"ml1m23gQzRate",@"ljPz23gQz",@"ljPz23gQzRate"];
- }
- 
  ****** 以下分不同表头 ********
  
  1、单层表头
